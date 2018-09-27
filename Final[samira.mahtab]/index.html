@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="hover.css">
+	 <link rel="stylesheet" type="text/css" href="css/style5.css" />
+	 <link rel="shartcut icon" 18x16 href="images/logoo.jpg">
+	 <title>تست روانشناسی</title>
+</head>
+<body id="bady">
+	<div id = "main">
+		<h1  id = "heading">تست روانشناسی</h1>
+
+		<ul  id = "list">
+			<li><a href="index5.html">شروع</a></li><br>
+			<li  id="myBtn"><a >درباره</a></li><br>
+			<li  class="dropdown" id="myBt" ><a >راهنما</a></li><br>
+			<li id="exit" ><a href = "#" id = "link1" onclick="closewindow()">خروج</a></li><br>
+		</ul>	
+	
+	<div id="myModal" class="modal">
+			<!-- Modal content -->
+			
+			<div class="modal-content">
+			<span class="close">&times;</span>
+			<center>
+			<h1>درباره</h1>
+				<h2>ما شاگردان سال دوم پوهنحی کامپیوتر ساینس  و همچنان شامل مکتب کدنویسی که توسط استاد فرشته فروغ تاسیس شده است هستیم.ما در مدت هشت ماه که شامل مکتب شده ایم سه زبان را فرا گرفته ایم,و این اپلیکیشن را در مدت یک هفته با استفاده از   طراحی کرده ایم  HTML,CSS,JAVA SCRIPT <br><br>:ادیتورس<br>سمیرا ناصری     و  مهتاب نبی زاده<br><br>:ارتباط با ما</h2></center><br><br>
+				<br>
+				
+				<p id="icoon">
+
+					<a><i class="fa fa-facebook"></i></a>
+					<a><i class="fa fa-twitter"></i></a>
+					<a><i class="fa fa-yahoo"></i></a>
+
+				</p>
+			</div>
+		</div>
+		<div id="myMod" class="mod">
+			<!-- Modal content -->
+			
+			<div class="modal-content">
+			<span class="clo">&times;</span>
+			
+			<h1 style="text-align: center;" >راهنمایی</h1 >
+				<h2 style="text-align: center;" >احساسات مشترک خودرا با دیگران دریابید.
+					در این وبسایت در نظر داریم تا با بیان چندین سوال و استدلال  به شما ثابت کنیم که هر آنچه که در دل دارید مشترک است و تنها شما نیستید که گاهی از کوره درمیروید و یا گاهی هم از خوشی زیاد نگران بنظر میرسید.تمام تست ها دراین<br> وبسایت آزمایش شده است<h2>
+					<br><br>
+						<h1 style="text-align: center;"  >:هنری جیمز</h1 >
+						<h2 style="text-align: center;" >سه چیز در زندگی بشری اهمیت دارد:نخست مهربانی دوم مهربانی وسوم هم مهربانی
+               </h2>
+			</div>
+		</div>
+		<script>
+			
+		
+		
+		function sendData(){
+				var name=document.getElementById("name").value;
+				var url='index.html?name=' + encodeURIComponent(name);
+				document.location.href=url;
+				
+				
+			var url = "name%20do%20not%20match";   
+				var replaced = url.replace("%20", " "); // "Passwords do%20not%20match"
+			}
+			
+		// Get the modal
+				var modal = document.getElementById('myModal');
+		// Get the button that opens the modal
+				var btn = document.getElementById("myBtn");
+		// Get the <span> element that closes the modal
+				var span = document.getElementsByClassName("close")[0];
+		// When the user clicks the button, open the modal 
+				btn.onclick = function() {
+				modal.style.display = "block";
+				//#panel.style.display = "none";
+					}
+		// When the user clicks on <span> (x), close the modal
+				span.onclick = function() {
+				modal.style.display = "none";
+					}
+
+
+
+		// When the user clicks anywhere outside of the modal, close it
+		document.getElementById("exit").addEventListener("click",
+			function close_window() {
+				if (confirm(" you want to Close  this Window?")) {
+				close();
+			  }
+			});
+			
+
+
+		// Get the modal
+				var mod = document.getElementById('myMod');
+		// Get the button that opens the modal
+				var bt = document.getElementById("myBt");
+		// Get the <span> element that closes the modal
+				var spa = document.getElementsByClassName("clo")[0];
+		// When the user clicks the button, open the modal 
+				bt.onclick = function() {
+				mod.style.display = "block";
+				//#panel.style.display = "none";
+					}
+		// When the user clicks on <span> (x), close the modal
+				spa.onclick = function() {
+				mod.style.display = "none";
+					}
+		// When the user clicks anywhere outside of the modal, close it
+				window.onclick = function(event) {
+					if (event.target == mod) {
+					mod.style.display = "none";
+					}
+					}
+			
+				
+ 		
+	 </script>
+	 </div>
+</body>
+
+</html>

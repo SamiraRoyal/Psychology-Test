@@ -1,0 +1,164 @@
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<meta charset="utf-8">
+            <link rel="stylesheet" type="text/css" href="css/style5.css" /> 
+            <link rel="stylesheet" type="text/css" href="css/animate.css">
+            <link rel="shartcut icon" 18x16 href="images/logoo.jpg">
+			<title>تست شخصیت</title>
+			
+				
+
+			
+		</head>
+
+		<body id="badi">
+
+			
+			<h1 id="titlequiz" ><strong>~~~~~~~~ تست اضطراب ~~~~~~~~ </strong></h1>
+			<div id="container">
+				<div id="quizsection">
+					
+            <p id="question">
+			write question here..
+		    </p>
+				
+					
+					
+					<div id="buttones">
+
+						<button id="btn0" class="btn" value="A" onclick="checkAnswer(this.value)"></button>
+						<button id="btn1" class="btn" value="B" onclick="checkAnswer(this.value)"></button>
+						<button id="btn2" class="btn" value="C" onclick="checkAnswer(this.value)"></button>
+						<button id="btn3" class="btn" value="D" onclick="checkAnswer(this.value)"this.value></button>
+
+					</div>
+					<p id="counter">counter</p>
+				</div>
+				<!----Model-->
+				<div  id="mod">
+					<!-- Modal content -->
+					
+					<div class="modal-cont">
+					<span id="clo">&times;</span>
+				
+					
+						<h2 class="answers">شما به اضطراب شدید مبتلا هستید اضظراب<br> شدید درکارهای شما حتما اختلال ایجاد می کند <br>وبسیاری از بیماری های جسمی و روانی را با خود<br> به همراه می آورد و در اولین فرصت به روانشناس<br> مراجعه کنید تا در آینده به مشکل بر نخورید</h2>
+
+					</div>
+				</div>
+
+
+			</div>
+			<script type="text/javascript" >
+				var num=0;
+				var score=0;
+				
+		var question=[
+		["به خود مطمین هستم؟",
+		"بسیار زیاد",
+		 "زیاد",
+		 "تا حد متوسط","کمی"],
+		["می توانم بر افکارخود تمرکز کنم؟",
+		" بسیار زیاد",
+		"زیاد",
+		"تا حد متوسط",
+		"کمی","B"
+
+		],
+		["آرام هستم ؟",
+		"بسیار زیاد",
+		"زیاد",
+		"متوسط" ,
+		"کمی"
+		,"A"],
+		["عصبی هستم؟",
+		"بسیار زیاد",
+		 "زیاد",
+		 "متوسط","کمی"],
+		["ناراحت هستم؟",
+		"بسیار زیاد",
+		 "زیاد",
+		 "متوسط","کمی"],
+		 ["بدنم همواره مرطوب است؟",
+		"بسیار زیاد",
+		 "زیاد",
+		 "متوسط","کمی"],
+		 ["نفسم نامنظم است‌؟",
+		"بسیار زیاد",
+		 "زیاد",
+		 "متوسط","کمی"],
+		 ["احساس درد و ناراحتی در معده دارم ؟",
+		"بسیار زیاد",
+		 "زیاد",
+		 "متوسط","کمی"],
+
+
+		 
+		];
+		function _(x){
+			return document.getElementById(x);
+		}
+		function renderQuestion(){
+			if(num>=question.length){
+				
+
+				 my();
+
+
+			}
+			_("counter").innerHTML=(num+1) +"of"+question.length;
+			_("question").innerHTML=question[num][0];
+			_("btn0").innerHTML=question[num][1];
+			_("btn1").innerHTML=question[num][2];
+			_("btn2").innerHTML=question[num][3];
+			_("btn3").innerHTML=question[num][4];
+			
+			
+		}
+		function checkAnswer(val){
+			
+			if(val =="A"){
+				score +=5;
+			}
+			else if(val == "B"){
+				score +=4;
+			}
+			else if(val == "C"){
+				score +=3;
+			}
+			else if(val == "D"){
+				score +=2;
+			}
+			
+			
+			num++;
+			renderQuestion();
+		}
+			// Model : 
+			var test = document.getElementById("mod");
+			var clos = document.getElementById("clo");
+			
+		function my(){
+			if(score<24){
+				alert("امتیاز کم شما در این تست به خوبی نشان می دهد که شما فردی کاملا طبیعی هستید و هیچ اختلال اضطرابی و مشکلی ندارید به روشی که در زنده گی تان به پیش گرفتین ادامه بدهید تا در کمال آرامش از زنده گی لذت ببرید");
+			}
+			else if(score>=25 && score<32){
+	
+				alert("اضطراب شما کمی بیشتراز میزان طبیعی است که با توجه به کم بودن میزان اختلال جای نگرانی نیست و می توانید با استفاده از راهکارهای کاهش اضطراب به راحتی برآن غلبه کنید.");
+			}
+			else{
+				//alert("شما به اضطراب شدید مبتلا هستید اضظراب شدید درکارهای شما اختلال ایجاد می کند وبسیاری از بیماری های جسمی و روانی را با خود به همراه می آورد و در آولین فرصت به روانشناس مراجعه 	");
+
+				test.style.display = "block";
+				clos.addEventListener("click",function(){
+					test.style.display="none";
+				});
+
+			}
+		}
+
+		window.addEventListener("load",renderQuestion);
+			</script>
+		</body>
+		</html>

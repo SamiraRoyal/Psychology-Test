@@ -1,0 +1,228 @@
+		<!DOCTYPE html>
+		<html>
+		<head>
+			<meta charset="utf-8">
+            <link rel="stylesheet" type="text/css" href="css/style5.css" /> 
+            <link rel="stylesheet" type="text/css" href="css/animate.css">
+            <link rel="shartcut icon" 18x16 href="images/logoo.jpg">
+			<title>تست شخصیت</title>
+			
+				
+
+			
+		</head>
+
+		<body id="badi">
+
+			
+			<h1 id="titlequiz"    >~~~~~~~~ چه جور شخصیتی دارید ~~~~~~~~</h1>
+			<div id="container">
+				<div id="quizsection" >
+					
+            <p id="question">
+			write question here..</p>	
+				<div id="buttones">
+
+						<button id="btn0" class="btn" value="A" onclick="checkAnswer(this.value)"></button>
+						<button id="btn1" class="btn" value="B" onclick="checkAnswer(this.value)"></button>
+						<button id="btn2" class="btn" value="C" onclick="checkAnswer(this.value)"></button>
+						
+
+					</div>
+					<p id="counter">counter</p>
+				</div>
+				<!----Model-->
+				<div  id="mod">
+					<!-- Modal content -->
+					
+					<div class="modal-cont">
+					<span id="clo">&times;</span>
+					<center>
+						<h2 id="description" class="answers"></h2>
+
+						</center>
+
+					</div>
+				</div>
+
+
+				
+
+
+			</div>
+			<script type="text/javascript" >
+				var num=0;
+				var score=0;
+				
+		var question=[
+		["چه موقع از روز بهترین و آرام‌ترین احساس را دارید؟",
+" صبح",
+ "عصر و غروب",
+ "شب"],
+ //____________________________________________________________________
+
+[" معمولاً چگونه راه می روید؟",
+"نسبتاً سریع با قدمهای کوتاه ولی تند و پشت سر هم،",
+" آهسته‌تر، با سری صاف روبرو",
+"آهسته و سربه زیر.",
+"B"
+
+],
+//_____________________________________________________________________________
+["وقتی با دیگران صحبت می کنید?",
+"می ایستید و دست به سینه حرف می زنید",
+"دست‌ها را در هم قلاب می کنید ",
+" با گوش خود بازی می‌کنید، به چانه‌تان دست می زنید یا مو‌هایتان را صاف می کنید" ,
+""
+,"A"],
+//___________________________________________________________________________
+["وقتی آرام هستید، چگونه می نشینید؟ ",
+"زانو‌ها خم و پا‌ها تقریباً کنار هم ",
+ "چهارزانو ",
+ "پای صاف و دراز به بیرون",],
+ //_______________________________________________________________________
+
+["وقتی چیزی واقعاً برای شما جالب است، چگونه واکنش نشان می دهید؟",
+"خنده ای بلند که نشان دهد چقدر موضوع جالب بوده",
+ " خنده اما نه بلند",
+ " لبخند کوچک",],
+
+ //_____________________________________________________________________
+ 	["سخت مشغول کاری هستید، بر آن تمرکز دارید، اما ناگهان دلیلی یا شخصی آن را قطع می کند؛",
+"از وقفه ایجاد شده راضی هستید و از آن استقبال می کنید",
+ " بسختی ناراحت می شوید",
+ " حالتی بینابین این ۲ حالت ایجاد می شود",],
+
+ 
+
+		];
+		function _(x){
+			return document.getElementById(x);
+		}
+		function renderQuestion(){
+			if(num>=question.length){
+				
+
+				 my();
+
+
+			}
+			_("counter").innerHTML=(num+1) +"of"+question.length;
+			_("question").innerHTML=question[num][0];
+			_("btn0").innerHTML=question[num][1];
+			_("btn1").innerHTML=question[num][2];
+			_("btn2").innerHTML=question[num][3];
+			
+			
+		}
+		function checkAnswer(val){
+			
+			if(num == 0){
+			if(val == "A"){
+				score +=5;
+			}
+			else if(val == "B"){
+				score +=3;
+			}
+			else{
+				score +=10;
+			}
+		}
+//________________________________________________________________
+		else if(num==1) {
+			if(val == "A"){
+				score +=3;
+			}
+			else if(val == "B"){
+				score +=5;
+			}
+			else{
+				score +=10;
+			}
+		}
+//________________________________________________________________
+	else if (num==2){
+		if(val == "A"){
+				score +=5;
+			}
+			else if(val == "B"){
+				score +=10;
+			}
+			else{
+				score +=3;
+			}
+	}
+//__________________________________________________________________
+	else if(num==3){
+		if(val == "A"){
+				score +=5;
+			}
+			else if(val == "B"){
+				score +=10;
+			}
+			else{
+				score +=3;
+			}
+	}
+//__________________________________________________________________
+	else {
+		if(val == "A"){
+				score +=10;
+			}
+			else if(val == "B"){
+				score +=3;
+			}
+			else{
+				score +=5;
+			}
+
+	}
+//__________________________________________________________
+	
+	
+	
+			
+			
+			num++;
+			renderQuestion();
+		}
+			// Model : 
+			var test = document.getElementById("mod");
+			var clos = document.getElementById("clo");
+			
+			
+		function my(){
+			if(score>=35 && score <=50){
+				
+				test.style.display = "block";
+				clos.addEventListener("click",function(){
+					test.style.display="none";
+				});
+				_("description").innerHTML = "دیگران در ارتباط و رفتار با شما شدیداً مراقب و هوشیار هستند آن‌ها شما را مغرور، خودمحور و بی ‌‌‌نهایت سلطه جو می دانند، گرچه شما را تحسین می کنند و به ظاهر می گویندکاش من جای تو بودم!! اما معمولاً به شما اعتماد ندارند و نسبت به ایجاد رابطه ای عمیق و دوستانه بی میل و فراری هستند.";
+
+			}
+			else if(score>=20 && score<=35){
+				
+				test.style.display = "block";
+				clos.addEventListener("click",function(){
+					test.style.display="none";
+				});
+				_("description").innerHTML = " بدانید دوستان شما را تحریک پذیر می دانند، بدون فکر عمل می کنیدو سریع از موضوعات ناخوشایند برآشفته می شوید، علاقه‌مند به رهبری جمع و تصمیم گیریهای سریع دارید (هرچند اغلب درست از کار درنمی آیند!) دیگران شما را جسور و اهل مخاطره می دانند. کسی که همه چیز را تجربه و امتحان می کند، از ماجراجویی لذت می برد و در مجموع به دلیل ایجاد شرایط و بستر هیجانات توسط شما، از همراهیتان لذت ";
+
+			}
+			else{
+				
+
+				test.style.display = "block";
+				clos.addEventListener("click",function(){
+					test.style.display="none";
+				});
+				_("description").innerHTML = " بدانید در نظر سایرین معقول، هوشیار، دقیق، ملاحظه کار و اهل عمل هستید. همه می دانند شما باهوش و با استعداد هستید اما مهم‌تر از همه فروتن و متواضع هستید. به سرعت و سادگی با دیگران باب دوستی را باز نمی کنید. اما اگر با کسی دوست شوید صادق، باوفا و وظیفه‌شناس هستید. اما انتظار بازگشت این صداقت و صمیمیت از طرف دوستانتان را دارید گرچه سخت دوست می شوید اما سخت‌تر دوستی‌ها را‌‌‌ رها می کنید.";
+
+			}
+		}
+
+		window.addEventListener("load",renderQuestion);
+			</script>
+		</body>
+		</html>
